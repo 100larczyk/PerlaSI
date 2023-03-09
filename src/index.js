@@ -12,7 +12,9 @@ function createHeader() {
 function createNav() {
   const nav = document.createElement("nav");
   const homeButton = document.createElement("button");
+
   const productsButton = document.createElement("button");
+
   const contactButon = document.createElement("button");
 }
 
