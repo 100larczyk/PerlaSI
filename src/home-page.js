@@ -7,8 +7,9 @@ export function loadHomePage() {
   contentDiv.appendChild(paragraph);
 
   const restaurantImage = document.createElement("img");
+  restaurantImage.className = "mainPhoto";
   restaurantImage.src =
-    "C:/Users/mstol/Desktop/JS - learn/webpack-exercise/src/restaurant-photo.jpg";
+    "C:/Users/mstol/Desktop/JS - learn/webpack-exercise/src/candle.jpg";
   contentDiv.appendChild(restaurantImage);
 
   return contentDiv;
