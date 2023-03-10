@@ -1,5 +1,8 @@
-export function loadHomePage() {
+export default loadHome;
+
+function createHomePage() {
   const contentDiv = document.createElement("div");
+  contentDiv.className = "HomePageMainContent";
 
   const paragraph = document.createElement("p");
   paragraph.textContent =
@@ -13,4 +16,11 @@ export function loadHomePage() {
   contentDiv.appendChild(restaurantImage);
 
   return contentDiv;
+}
+
+function loadHome() {
+  const main = document.querySelector(".main");
+  // main.textContent = "";
+  main.appendChild(createHomePage());
+  return main;
 }

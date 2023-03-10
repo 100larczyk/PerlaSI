@@ -1,4 +1,4 @@
-import { loadHomePage } from "./home-page";
+import loadHome from "./home-page";
 import "./style.css";
 
 function createHeader() {
@@ -7,30 +7,62 @@ function createHeader() {
 
   const h1 = document.createElement("H1");
   h1.textContent = "PerlaSi";
-  header.appendChild(h1);
 
+  header.appendChild(h1);
+  header.appendChild(createNav());
   return header;
 }
 
 function createNav() {
   const nav = document.createElement("nav");
   const homeButton = document.createElement("button");
-  homeButton.className = "button.nav";
+  homeButton.classList.add("button-nav");
   homeButton.textContent = "HOME";
+  homeButton.addEventListener("click", (e) => {
+    if (e.target.classList.contains("active")) return;
+    setActiveButton(homeButton);
+    loadHome();
+  });
 
   const productsButton = document.createElement("button");
-  productsButton.className = "button.nav";
+  productsButton.classList.add("button-nav");
   productsButton.textContent = "PRODUCTS";
+  productsButton.addEventListener("click", (e) => {
+    if (e.target.classList.contains("active")) return;
+    setActiveButton(productsButton);
+  });
 
   const contactButon = document.createElement("button");
-  contactButon.className = "button.nav";
+  contactButon.classList.add("button-nav");
   contactButon.textContent = "CONTACT";
+  contactButon.addEventListener("click", (e) => {
+    if (e.target.classList.contains("active")) return;
+    setActiveButton(contactButon);
+  });
 
   nav.appendChild(homeButton);
   nav.appendChild(productsButton);
   nav.appendChild(contactButon);
 
   return nav;
+}
+
+function setActiveButton(button) {
+  const buttons = document.querySelectorAll(".button-nav");
+  buttons.forEach((button) => {
+    if (button !== this) {
+      button.classList.remove("active");
+    }
+  });
+
+  button.classList.add("active");
+}
+
+function createMain() {
+  const main = document.createElement("main");
+  main.classList.add("main");
+  main.setAttribute("id", "main");
+  return main;
 }
 
 function createFooter() {
@@ -49,9 +81,9 @@ function createFooter() {
 function createWebsite() {
   const content = document.querySelector(".content");
   content.appendChild(createHeader());
-  content.appendChild(createNav());
-  content.appendChild(loadHomePage());
+  content.appendChild(createMain());
   content.appendChild(createFooter());
-  return content;
+  setActiveButton(document.querySelector(".button-nav"));
+  loadHome();
 }
 createWebsite();
