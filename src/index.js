@@ -1,12 +1,24 @@
 import loadHome from "./home-page";
+import loadProducts from "./products";
+import loadContact from "./contact";
 import "./style.css";
+
+const body = document.querySelector("body");
+
+const bodyImg = document.createElement("img");
+bodyImg.classList.add("bodyImg");
+bodyImg.src =
+  "https://cdn.pixabay.com/photo/2022/01/05/21/07/pizza-6918041_960_720.jpg";
+body.style.backgroundImage = `url(${bodyImg.src})`;
+body.style.backgroundSize = "cover";
+body.style.backgroundPosition = "center";
 
 function createHeader() {
   const header = document.createElement("header");
   header.className = "header";
 
   const h1 = document.createElement("H1");
-  h1.textContent = "PerlaSi";
+  h1.textContent = "El Tiamo Pizza";
 
   header.appendChild(h1);
   header.appendChild(createNav());
@@ -30,6 +42,7 @@ function createNav() {
   productsButton.addEventListener("click", (e) => {
     if (e.target.classList.contains("active")) return;
     setActiveButton(productsButton);
+    loadProducts();
   });
 
   const contactButon = document.createElement("button");
@@ -38,6 +51,7 @@ function createNav() {
   contactButon.addEventListener("click", (e) => {
     if (e.target.classList.contains("active")) return;
     setActiveButton(contactButon);
+    loadContact();
   });
 
   nav.appendChild(homeButton);
@@ -78,12 +92,11 @@ function createFooter() {
 //
 //
 //
-function createWebsite() {
+const createWebsite = (() => {
   const content = document.querySelector(".content");
   content.appendChild(createHeader());
   content.appendChild(createMain());
   content.appendChild(createFooter());
   setActiveButton(document.querySelector(".button-nav"));
   loadHome();
-}
-createWebsite();
+})();

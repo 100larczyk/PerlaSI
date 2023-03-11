@@ -1,4 +1,42 @@
+:root {
+  --background-light: rgba(0, 0, 0, 0.6);
+  --font-color: #eee;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 .mainPhoto {
-  width: 300px;
-  height: 300px;
+  width: 30rem;
+  height: 30rem;
+}
+
+.main {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 3rem;
+  width: 40rem;
+  height: 40rem;
+  background-color: var(--background-light);
+  color: var(--font-color);
+}
+.header {
+  background-color: var(--background-light);
+  height: 10rem;
+  color: var(--font-color);
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.footer {
+  height: 3rem;
+  background-color: var(--background-light);
+  color: var(--font-color);
+}
+
+.paragraph {
+  margin: 1rem;
 }

@@ -5,22 +5,27 @@ function createHomePage() {
   contentDiv.className = "HomePageMainContent";
 
   const paragraph = document.createElement("p");
-  paragraph.textContent =
-    "With PerlaSi candle, endless fire will come to your Home";
+  paragraph.textContent = "Best Pizza for every day of a week";
+  paragraph.classList.add("paragraph");
   contentDiv.appendChild(paragraph);
 
   const restaurantImage = document.createElement("img");
   restaurantImage.className = "mainPhoto";
   restaurantImage.src =
-    "C:/Users/mstol/Desktop/JS - learn/webpack-exercise/src/candle.jpg";
+    "https://images.pexels.com/photos/784631/pexels-photo-784631.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
   contentDiv.appendChild(restaurantImage);
+
+  // const paragraphDate = document.createElement("p");
+  // paragraph.textContent = "Since year 2000 with love";
+  // paragraph.classList.add("paragraph");
+  // contentDiv.appendChild(paragraphDate);
 
   return contentDiv;
 }
 
 function loadHome() {
   const main = document.querySelector(".main");
-  // main.textContent = "";
+  main.textContent = "";
   main.appendChild(createHomePage());
   return main;
 }
