@@ -10,8 +10,6 @@ bodyImg.classList.add("bodyImg");
 bodyImg.src =
   "https://cdn.pixabay.com/photo/2022/01/05/21/07/pizza-6918041_960_720.jpg";
 body.style.backgroundImage = `url(${bodyImg.src})`;
-body.style.backgroundSize = "cover";
-body.style.backgroundPosition = "center";
 
 function createHeader() {
   const header = document.createElement("header");
@@ -81,8 +79,8 @@ function createMain() {
 
 function createFooter() {
   const footer = document.createElement("footer");
-  footer.classList = "footer";
-  footer.textContent = "Michał Stolarczyk | Dominika Włóka";
+  footer.classList.add("footer");
+  footer.textContent = "Michał Stolarczyk | 2023";
 
   return footer;
 }

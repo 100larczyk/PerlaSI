@@ -60,6 +60,7 @@ function createProducts() {
 function loadProducts() {
   const main = document.querySelector(".main");
   main.textContent = "";
+  main.classList.add("mainProducts");
   main.appendChild(createProducts());
   return main;
 }

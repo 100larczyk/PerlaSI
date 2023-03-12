@@ -1,6 +1,8 @@
+/* global styles */
 :root {
   --background-light: rgba(0, 0, 0, 0.6);
   --font-color: #eee;
+  --background-dark: rgba(0, 0, 0, 0.7);
 }
 
 * {
@@ -9,19 +11,31 @@
   box-sizing: border-box;
 }
 
-.mainPhoto {
+body {
+  background-size: cover;
+  background-position: "center";
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* homePage style */
+.homePhoto {
   width: 30rem;
   height: 30rem;
+  margin: 1rem;
 }
 
 .main {
   text-align: center;
   margin: 2rem auto;
-  padding: 3rem;
+  /* padding-top: 1.5rem; */
   width: 40rem;
   height: 40rem;
   background-color: var(--background-light);
   color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .header {
   background-color: var(--background-light);
@@ -29,14 +43,80 @@
   color: var(--font-color);
   text-align: center;
   padding-top: 3rem;
+  font-family: "Brygada 1918", serif;
+}
+
+.button-nav {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  border-right: 1px #eee solid;
+  margin-right: 0.5rem;
+  padding-right: 0.5rem;
+}
+.button-nav:last-child {
+  border-right: none;
+  margin-right: 0;
+  padding-right: 0;
 }
 
 .footer {
   height: 3rem;
   background-color: var(--background-light);
   color: var(--font-color);
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.paragraph {
+/* productsPage */
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+
+.productDiv {
+  width: 15rem;
+  background-color: var(--background-dark);
+}
+
+.productImage {
+  width: 8rem;
+  height: 8rem;
+}
+
+/* contactPage */
+
+/* .contact {
+  width: 40rem;
+  height: 40rem;
+} */
+
+.adddressImg {
+  width: 35rem;
+}
+
+/* typography */
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
   margin: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+.contact .paragraph {
+  margin-bottom: 1rem;
+}
+.contact .address {
+  margin-bottom: 1rem;
 }

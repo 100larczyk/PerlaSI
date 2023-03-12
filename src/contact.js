@@ -6,7 +6,7 @@ function createContactPage() {
 
   const number = document.createElement("p");
   number.classList.add("paragraph");
-  number.textContent = "123 456 789";
+  number.textContent = "Mobile: 123 456 789";
 
   const address = document.createElement("h2");
   address.classList.add("address");
